@@ -1,11 +1,23 @@
 // Specific CSS for your home-page
+.background {
+  background-image: url(https://images.unsplash.com/photo-1626180874495-0fe651f60ecb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2831&q=80);
+  background-size: cover;
+}
+
 .main_banner {
   justify-content: center;
   padding: 150px;
-  font-weight: bolder;
+  border: 25px;
+  margin: 20px;
 }
 
 .secondary_text {
   justify-content: center;
   padding: 150px;
+}
+
+h1 {
+font-size: 400;
+font-weight: bolder;
+color: red;
 }
