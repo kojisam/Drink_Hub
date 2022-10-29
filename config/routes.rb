@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "pages#homepage"
-  
+  root to: "pages#home"
+
   get "/home", to: "drinks#index"
   get "users/:id", to: "users#show"
   get "drinks/new", to: "drinks#new"
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   post "drinks/:id", to: "drinks#show"
   get "orders/:id/show", to: "orders#show"
   get "dashboard", to: "users#dashboard"
-  
+
 end
