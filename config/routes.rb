@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   post "drinks/:id", to: "drinks#show"
   get "orders/:id/show", to: "orders#show"
   get "dashboard", to: "users#dashboard"
-
 end
