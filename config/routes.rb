@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   devise_for :users
-  # Defines the root path route ("/")
-  # root "articles#index"
+
+  root to: "pages#homepage"
+  
+  get "/home", to: "drinks#index"
+  get "users/:id", to: "users#show"
+  get "drinks/new", to: "drinks#new"
+  post "drinks", to: "drinks#create"
+  get "orders", to: "orders#index"
+  post "drinks/:id", to: "drinks#show"
+  get "orders/:id/show", to: "orders#show"
+  get "dashboard", to: "users#dashboard"
+  
 end
