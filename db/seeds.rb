@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Order.destroy_all
+Drink.destroy_all
+User.destroy_all
+
 User.create!(
   email: "fakertest@email.com",
   password: "faker123345"
@@ -17,6 +21,14 @@ User.create!(
     description: Faker::Lorem.sentences,
     stock_level: rand(50..100),
     price: rand(2..10),
+    user: User.first
+  )
+end
+
+10.times do
+  Order.create!(
+    quantity: rand(1..10),
+    drink: Drink.all.sample,
     user: User.first
   )
 end
