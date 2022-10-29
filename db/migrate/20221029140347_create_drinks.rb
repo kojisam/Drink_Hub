@@ -5,7 +5,7 @@ class CreateDrinks < ActiveRecord::Migration[7.0]
       t.string :description
       t.integer :stock_level
       t.integer :price
-      t.references :user_id, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
