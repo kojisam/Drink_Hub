@@ -1,6 +1,8 @@
+
+
 <div class="Upload Form">
   <h3>Upload a Drink for Sale:</h3>
-  <%= simple_form_for (@drinks) do |form| %>
+  <%= simple_form_for @drink do |form| %>
     <%= form.input :name, label: "Drink Name" %>
     <%= form.input :price, label: "RRP of Drink" %>
     <%= form.input :description, label: "Description" %>
