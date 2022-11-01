@@ -17,7 +17,7 @@ User.create!(
 )
 puts "Done"
 puts "Creating 50 drinks"
-50.times do
+10.times do
   Drink.create!(
     name: Faker::Kpop.iii_groups,
     description: Faker::Lorem.sentences,
