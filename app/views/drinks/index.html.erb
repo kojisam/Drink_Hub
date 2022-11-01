@@ -1,0 +1,17 @@
+<h1 class="title">The Choice is Yours<h1>
+
+<section class="section">
+  <div class="container">
+    <% @drinks.each do |drink| %>
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4"> <% link_to drink.name, drinks_path%></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>
