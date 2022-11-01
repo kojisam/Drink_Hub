@@ -18,13 +18,18 @@ User.create!(
 puts "Done"
 puts "Creating 50 drinks"
 10.times do
-  Drink.create!(
+  file = URI.open(Faker::LoremFlickr.image)
+  i = 1
+  object = Drink.new(
     name: Faker::Kpop.iii_groups,
     description: Faker::Lorem.sentences,
     stock_level: rand(50..100),
     price: rand(2..10),
     user: User.first
   )
+  object.photo.attach(io: file, filename:"#{i}_image.jpg", content_type: "image/jpg")
+  object.save!
+  i += 1
 end
 puts "Done"
 puts "Creating 10 orders"
