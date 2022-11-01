@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+       <th>name</th>
+       <th>price</th>
+       <th>quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order|%>
+    <tr>
+       <td><%= order.drink.name %></td>
+       <td><%= order.drink.price %></td>
+       <td><%= order.quantity %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
