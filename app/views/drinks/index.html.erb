@@ -1,17 +1,17 @@
-<h1 class="title">The Choice is Yours<h1>
-
-<section class="section">
-  <div class="container">
+<div class="container">
+  <div class="row">
     <% @drinks.each do |drink| %>
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="title is-4"> <% link_to drink.name, drinks_path%></p>
-            </div>
+      <div class="col-lg-2 col-md-6 mb-4">
+      <%# We want to be able to click in the name and take us to the drink page %>
+        <%= link_to drink.name, drink_path(drink) %>
+          <div class="card-body">
+            <p class="card-text"><%= drink.name %></p>
           </div>
-        </div>
+          <div class="card-footer text-muted">
+            <p class="card-text">Price: <%= drink.price %></p>
+          </div>
+
       </div>
     <% end %>
   </div>
-</section>
+</div>
