@@ -12,7 +12,7 @@ class DrinksController < ApplicationController
   def create
     @drink = Drink.new(drink_params)
     @drink.save
-    redirect_to drink_path(@drink)
+    redirect_to drinks_path(@drink)
   end
 
   def show
