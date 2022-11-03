@@ -1,0 +1,9 @@
+<header class="break">
+<h2>Order created on <%= created_at(@order) %></h2>
+</header>
+<ol>
+<% @order.drinks.each do |drink| %>
+    <li><%= drink.name %></li>
+    <p><%= drink.description %></p>
+<% end %>
+</ol>
