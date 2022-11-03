@@ -30,6 +30,8 @@ gem "jbuilder"
 # Devise Gem for authentication
 gem "devise"
 
+gem "dotenv-rails", groups: [:development, :test]
+
 #adding faker for data
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 
