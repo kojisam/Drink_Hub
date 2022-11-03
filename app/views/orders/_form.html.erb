@@ -1,17 +1,26 @@
-<%= simple_form_for @drink do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name, required: true, autofocus: true %>
-  </p>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-  </p>
-  <p>
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="confirmation-box col-md-4">
+  <div class="listing-price">
+    <div class="form-group">
+      <h4>£<%= @drink.price %></h4>
+
+      <%= simple_form_for [@drink, @order] do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.label :Include_captain %>
+        <%= f.select :captain, options_for_select([["Please select one", ""], "Yes", "No"]) %><br><br>
+
+        <%= f.label :party_size %>
+        <%= f.select :number_of_guests, options_for_select([["Please select one", ""], 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]) %>
+
+        <h5>Subtotal: <strong>$<%= @drink.price %></strong></h5><br>
+
+        <%= f.submit "Request to book", class: "btn btn-danger form-control" %>
+        <br><br>
+        <p class="text-center" style="color: grey">You won't be charged yet</p>
+        <p class="text-center" style="color: grey">-- Or --</p>
+
+        <button class="btn btn-primary custom-link form-control"><%= link_to "Contact owner", conversations_path %></button>
+      <% end %>
+    </div>
+  </div>
+</div>
