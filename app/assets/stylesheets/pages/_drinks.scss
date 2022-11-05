@@ -5,3 +5,11 @@ body {
   background-attachment: fixed;
   height: 100vh;
 }
+
+.container {
+  box-sizing: 58px;
+
+  .card {
+    background-color: rgb(46, 46, 46);
+  }
+}
