@@ -18,7 +18,7 @@ User.create!(
 puts "Done"
 puts "Creating 50 drinks"
 10.times do
-  file = URI.open(Faker::LoremFlickr.image)
+  file = URI.open(Faker::LoremFlickr.image(search_terms: ['sodacan']))
   i = 1
   object = Drink.new(
     name: Faker::Kpop.iii_groups,
