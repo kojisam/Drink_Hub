@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :drinks do
-
     resources :orders, only: [:create, :new]
     # POST request to create an order
   end
