@@ -13,8 +13,13 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.save
-    redirect_to orders_path(@order)
+    @order.user = current_user
+    if @order.save!
+      redirect_to orders_path(@order)
+    else
+       @order = Order.new
+       render 'orders/show', status: :unprocessable_entity
+    end
   end
 
   private
