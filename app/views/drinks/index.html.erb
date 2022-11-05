@@ -7,13 +7,10 @@
       <% end %>
 
       <div class="overlay">
-        <%= link_to drink.name, drink_path(drink) %>
 
       <%# We want to be able to click in the name and take us to the drink page %>
         <%= link_to drink.name, drink_path(drink) %> <br>
-          <div class="card-body">
-            <p class="card-text"><%= drink.name %></p>
-          </div>
+
 
           <div class="card-footer text-muted">
             <p class="items price">Price: £<%= drink.price %></p>
