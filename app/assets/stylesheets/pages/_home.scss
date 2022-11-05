@@ -1,21 +1,14 @@
 // Specific CSS for your home-page
-.background {
+body {
   background-image: url(https://images.unsplash.com/photo-1631414517446-6d10a2e72a6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
-  background-size: cover;
-  padding: 150px;
-  display: flex;
+  flex-grow: 1;
 }
 
 .main_banner {
   justify-content: center;
   border: 25px;
-  margin: 20px;
+  margin: 160px;
   display: flex;
-}
-
-.secondary_text {
-  justify-content: center;
-  padding: 150px;
 }
 
 h1 {
@@ -32,4 +25,25 @@ h2 {
 
 a {
   color: orange;
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  body {
+    width: 700px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  body {
+    width: 500px;
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  body {
+    width: 300px;
+  }
 }
