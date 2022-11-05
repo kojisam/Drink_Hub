@@ -1,26 +1,20 @@
-<div class="container card mx-auto 2">
-  <div class="row">
-    <% @drinks.each do |drink| %>
-      <div class="container photo">
+<div class="container card">
+   <div class="col">
+    <div class="row row-cols-3">
+      <% @drinks.each do |drink| %>
+        <div class="card photo" class="card-img-top">
       <% if drink.photo.attached? %>
-        <%= cl_image_tag drink.photo.key, height: 300, width: 400, crop: :fit %>
+        <%= cl_image_tag drink.photo.key, height: 350, width: 350, crop: :fit %>
       <% end %>
-
-      <div class="overlay">
-
-      <%# We want to be able to click in the name and take us to the drink page %>
-        <%= link_to drink.name, drink_path(drink) %> <br>
-
-
+    <div class="card-body">
+        <%= link_to drink.name, drink_path(drink) %>
           <div class="card-footer text-muted">
+            <button type="button" class="btn btn-danger"><%= link_to "Buy now", new_drink_order_path(drink) %></button>
             <p class="items price">Price: £<%= drink.price %></p>
           </div>
-
-      </div>
-
-          <%= link_to "Buy now", new_drink_order_path(drink) %>
-
-      </div>
+    </div>
+    </div>
     <% end %>
+    </div>
   </div>
 </div>
