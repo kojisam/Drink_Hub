@@ -1,6 +1,6 @@
 <div class="Upload Form">
   <h3>Submit your order:</h3>
-  <%= simple_form_for [@order] do |form| %>
+  <%= simple_form_for [@drink, @order] do |form| %>
     <%= form.input :quantity, label: "Quantity" %>
     <%= form.button :submit %>
   <% end %>
