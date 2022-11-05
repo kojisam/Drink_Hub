@@ -3,7 +3,7 @@
     <p><%= @drink.name %></p>
 
     <%= cl_image_tag @drink.photo.key, height: 300, width: 400, crop: :fill %>
-  
+
 
     <p><%= @drink.description %></p>
     <p><%= @drink.price %></p>
@@ -13,5 +13,5 @@
     %>
 
     <%= link_to "See our selection of drinks", "/drinks" %> <br>
-    <%= link_to "Buy now", new_drink_order_path(drink) %>
+    <%= link_to "Buy now", new_drink_order_path(@drink) %>
 </div>
