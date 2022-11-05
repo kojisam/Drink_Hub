@@ -5,6 +5,8 @@
        <th>name</th>
        <th>price</th>
        <th>quantity</th>
+       <th>total</th>
+       <th>order</th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +15,8 @@
        <td><%= order.drink.name %></td>
        <td><%= order.drink.price %></td>
        <td><%= order.quantity %></td>
+       <td><%= total = (order.drink.price * order.quantity) %></td>
+       <td><%= link_to "See order", order_path(order) %></td>
     </tr>
     <% end %>
   </tbody>
