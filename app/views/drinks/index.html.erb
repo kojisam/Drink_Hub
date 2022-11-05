@@ -5,12 +5,24 @@
       <% if drink.photo.attached? %>
         <%= cl_image_tag drink.photo.key, height: 300, width: 400, crop: :fit %>
       <% end %>
+
       <div class="overlay">
         <%= link_to drink.name, drink_path(drink) %>
+
+      <%# We want to be able to click in the name and take us to the drink page %>
+        <%= link_to drink.name, drink_path(drink) %> <br>
+          <div class="card-body">
+            <p class="card-text"><%= drink.name %></p>
+          </div>
+
           <div class="card-footer text-muted">
             <p class="items price">Price: £<%= drink.price %></p>
           </div>
+
       </div>
+
+          <%= link_to "Buy now", new_drink_order_path(drink) %>
+
       </div>
     <% end %>
   </div>
