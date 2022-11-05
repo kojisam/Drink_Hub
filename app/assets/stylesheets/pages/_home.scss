@@ -1,18 +1,20 @@
 // Specific CSS for your home-page
 body {
   background-image: url(https://images.unsplash.com/photo-1631414517446-6d10a2e72a6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .main_banner {
   justify-content: center;
   border: 25px;
   margin: 160px;
-  display: flex;
 }
 
 h1 {
   font: Arial;
-  font-size: 400;
+  font-size: 250px;
   font-weight: bolder;
   color: orange;
 }
@@ -24,6 +26,14 @@ h2 {
 
 a {
   color: orange;
+}
+
+.footer {
+  background-color: orange;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 @media (max-width: 960px) {
