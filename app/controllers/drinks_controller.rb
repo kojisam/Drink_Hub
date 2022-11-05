@@ -1,6 +1,10 @@
 class DrinksController < ApplicationController
   def index
-    @drinks = Drink.all
+    if params[:query].present?
+      @drinks = Drink.where(name: params[:query])
+    else
+      @drinks = Drink.all
+    end
   end
 
   def new

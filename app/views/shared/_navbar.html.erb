@@ -4,6 +4,15 @@
         <%= image_tag "https://img.freepik.com/premium-vector/grape-soda-can-crystal-glass-drawing-illustration-vector_42174-382.jpg"  %>
     <% end %>
 
+ <%= form_with url: drinks_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a movie"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
