@@ -1,6 +1,10 @@
 <div>
+
+    <p><%= @drink.name %></p>
+
     <%= cl_image_tag @drink.photo.key, height: 300, width: 400, crop: :fill %>
-    <h2><%= @drink.name %></h2>
+  
+
     <p><%= @drink.description %></p>
     <p><%= @drink.price %></p>
 
