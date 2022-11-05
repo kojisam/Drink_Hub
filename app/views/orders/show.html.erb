@@ -1,15 +1,9 @@
-<div class="container-listing">
+<div>
   <br>
   <h2><strong>Congratulations, your order has been confirmed!</strong></h2><br>
   <h3><strong>Your drink details</strong></h3><br>
 
-  <strong>Start Date: <%= @order.start_date %></strong> | <strong>End Date: <%= @order.end_date %></strong>
-
   <h4><strong><%= @order.drink.name %></strong></h4>
   <p>Price: £ <%= @order.drink.price %></p>
   <p><%= @order.drink.description %></p>
-
-  <div class="order-image"><br>
-    <img src=<%= @order.drink.photo %> alt="Your drink photo" width="1000" class="img-responsive">
-  </div>
 </div>

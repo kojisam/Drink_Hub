@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :drinks do
-    resources :orders, only: [:show, :create]
+    resources :orders, only: [:create]
+    # POST request to create an order
   end
 
-  resources :orders, only: :index
+  resources :orders, only: [:index, :show]
+  # /orders/:id
 end
