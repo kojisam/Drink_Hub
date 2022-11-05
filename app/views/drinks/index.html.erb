@@ -13,7 +13,7 @@
           <div class="card-footer text-muted">
             <p class="card-text">Price: £<%= drink.price %></p>
           </div>
-          <%= link_to "Buy now", order_path(drink) %>
+          <%= link_to "Buy now", new_drink_order_path(drink) %>
       </div>
     <% end %>
   </div>
