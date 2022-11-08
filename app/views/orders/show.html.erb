@@ -1,10 +1,17 @@
-<div>
+<div class="d-flex justify-content-center my-5">
   <br>
   <h2><strong>Congratulations, your order has been confirmed!</strong></h2><br>
-  <h3><strong>Your drink details</strong></h3><br>
+</div>
+<div class="d-flex justify-content-center my-5">
+  <div class="col-12 col-lg-3">
+    <div class="card text-center align-self-center border-0" style="background-color:orange">
+  <h3><strong>Your drink details:</strong></h3><br>
 
   <h4><strong><%= @order.drink.name %></strong></h4>
   <p>Price: £ <%= @order.drink.price %></p>
   <p><%= @order.drink.description %></p>
-  <%= link_to "Return to Drinks", drinks_path %>
+  </div>
+  <div class="d-flex justify-content-center my-5">
+  <button type="button" class="btn btn-danger"><%= link_to "Return to Drinks", drinks_path %>
+</div>
 </div>
