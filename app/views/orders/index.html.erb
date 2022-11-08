@@ -2,6 +2,7 @@
 <br>
   <thead>
     <tr>
+       <th>image</th>
        <th>name</th>
        <th>price</th>
        <th>quantity</th>
@@ -12,6 +13,7 @@
   <tbody>
     <% @orders.each do |order|%>
     <tr>
+       <td><%= image_tag order.drink.photo, :size => "100x100" %></td>
        <td><%= order.drink.name %></td>
        <td><%= order.drink.price %></td>
        <td><%= order.quantity %></td>
