@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
     @drink = Drink.find(params[:drink_id])
     @order.drink = @drink
     if @order.save!
-      redirect_to orders_path(@order)
+      redirect_to order_path(@order)
     else
        @order = Order.new
        render 'orders/show', status: :unprocessable_entity
