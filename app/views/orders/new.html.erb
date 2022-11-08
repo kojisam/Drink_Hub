@@ -1,10 +1,18 @@
-<div class="Upload Form">
-  <h3>Submit your order:</h3>
-  <%= simple_form_for [@drink, @order] do |form| %>
-    <%= form.input :quantity, label: "Quantity" %>
-    <%= form.button :submit %>
-  <% end %>
+<div class="d-flex justify-content-center my-5">
+  <div class="col-12 col-lg-3">
+    <div class="card text-center align-self-center border-0" style="background-color:transparent">
+      <div class="card-header ">
+        Submit your order:
+      </div>
+      <div class="Upload Form">
+        <div class="card-body">
+          <h5 class="card-title">How many drinks do you want?</h5>
+          <%= simple_form_for [@drink, @order] do |form| %>
+          <%= form.input :quantity, label: "Quantity:" %>
+          <button type="button" class="btn btn-warning"><%= form.button :submit %></button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<%# need some help on getting submit to link to order confirmation %>
-<%# link_to "See order", order_path(order) %>
