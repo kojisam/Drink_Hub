@@ -1,14 +1,19 @@
 body {
-  background-image: url(https://images.unsplash.com/photo-1631414517446-6d10a2e72a6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80);
+  background-image: url(https://images.unsplash.com/photo-1631414517446-6d10a2e72a6e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80) linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
+
 }
 
 .card {
-  padding: 30px;
+  background-color: #fa961400;
+  padding: 38px;
   column-count: 3;
+  border-radius: 28px;
+  border: none;
+  box-shadow: inset;
 
   @include media-breakpoint-only(xs) {
     column-count: 1;
@@ -22,4 +27,17 @@ body {
   @include media-breakpoint-only(xl) {
     column-count: 3;
   }
+}
+
+.card-title {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.card.photo {
+  background-color: #fb9209fa;
+}
+
+#bootstrap .btn-danger {
+  border-radius: 42px;
 }
