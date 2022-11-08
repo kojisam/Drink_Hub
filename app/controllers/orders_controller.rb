@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
   def index
     @orders = Order.where(user_id: current_user.id)
+    total_quantity = @orders.map{_1.quantity}.sum
+    total_drink_price = @orders.map{_1.drink.price}.sum
+    @orders_total = total_quantity*total_drink_price
   end
 
   def show
