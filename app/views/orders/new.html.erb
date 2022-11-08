@@ -9,7 +9,7 @@
           <h5 class="card-title">How many drinks do you want?</h5>
           <%= simple_form_for [@drink, @order] do |form| %>
           <%= form.input :quantity, label: "Quantity:" %>
-          <button type="button" class="btn btn-warning"><%= form.button :submit %></button>
+          <button type="button" class="btn btn-warning"><%= form.button :submit %>
           <% end %>
         </div>
       </div>
