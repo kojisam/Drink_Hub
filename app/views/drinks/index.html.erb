@@ -1,14 +1,16 @@
-<div class="card-columns" style="background-color:#ffa82e00;">
-  <% @drinks.each do |drink| %>
-      <div class="card mx-auto" style="width:300px; background-color:#ffa82e00;">
+<div class="row">
+<% @drinks.each do |drink| %>
+  <div class="col-12 col-lg-4">
+      <div class="card text-center text-white" style="background-color:#d1d1d14d;">
         <div class="card photo" class="card-img-top">
           <%= cl_image_tag drink.photo.key, height: 350, width: 350, crop: :fit if drink.photo.attached? %>
-          <div class="card-body" style="background-color:#e67e22ba;">
-            <h5 class="card-title text-center text-white"><%= link_to drink.name, drink_path(drink) %></h5>
-            <p class="card-text text-center text-white">Price: £<%= drink.price %></p>
-            <button type="button" class="btn btn-primary"><%= link_to "Buy now", new_drink_order_path(drink) %></button>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to drink.name, drink_path(drink) %></h5>
+            <p class="card-text">Price: £<%= drink.price %></p>
+            <button type="button" class="btn btn-danger"><%= link_to "Buy now", new_drink_order_path(drink) %></button>
           </div>
         </div>
       </div>
-  <% end %>
+  </div>
+<% end %>
 </div>
