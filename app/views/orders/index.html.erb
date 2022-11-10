@@ -1,3 +1,33 @@
+<table>
+<br>
+  <thead>
+    <tr>
+       <th>image</th>
+       <th>name</th>
+       <th>price</th>
+       <th>quantity</th>
+       <th>total</th>
+       <th>order</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% sum = 0%>
+    <% @orders.each do |order|%>
+    <tr>
+       <td><%= image_tag order.drink.photo, :size => "100x100" %></td>
+       <td><%= order.drink.name %></td>
+       <td><%= order.drink.price %></td>
+       <td><%= order.quantity %></td>
+       <%# <% sum  += (order.drink.price * order.quantity) %>
+       <td><%= total = (order.drink.price * order.quantity)%></td>
+       <td><% sum  += (order.drink.price * order.quantity) %></td>
+       <td><%= link_to "See order", order_path(order) %></td>
+    </tr>
+    <% end %>
+    <span>  <%= "£#{sum}" %> </span>
+  </tbody>
+</table>
+
 <div class="d-flex justify-content-center my-5">
   <div class="col-12 col-lg-3">
     <div class="card text-center align-self-center border-0" style="background-color:#ddcecde8">
@@ -30,3 +60,4 @@
     </div>
   </div>
 </div>
+
