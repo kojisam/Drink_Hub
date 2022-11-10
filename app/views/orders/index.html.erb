@@ -11,16 +11,19 @@
     </tr>
   </thead>
   <tbody>
+  <% sum = 0%>
     <% @orders.each do |order|%>
     <tr>
        <td><%= image_tag order.drink.photo, :size => "100x100" %></td>
        <td><%= order.drink.name %></td>
        <td><%= order.drink.price %></td>
        <td><%= order.quantity %></td>
-       <td><%= total = (order.drink.price * order.quantity) %></td>
+       <%# <% sum  += (order.drink.price * order.quantity) %>
+       <td><%= total = (order.drink.price * order.quantity)%></td>
+       <td><% sum  += (order.drink.price * order.quantity) %></td>
        <td><%= link_to "See order", order_path(order) %></td>
     </tr>
     <% end %>
+    <span>  <%= "£#{sum}" %> </span>
   </tbody>
-  <%= @orders_total%>
 </table>
