@@ -1,0 +1,30 @@
+.footer {
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: #02b3d0;
+  bottom: 0;
+  position: fixed;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  color: #02b3d0;
+}
+.footer-links a {
+  color: #02b3d0;
+  opacity: 0.3;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+  transition: 0.5s;
+  color: #02b3d0;
+}
+.footer .fa-heart {
+  color: #D23333;
+}

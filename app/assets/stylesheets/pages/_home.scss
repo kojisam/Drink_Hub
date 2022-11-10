@@ -46,15 +46,6 @@ a {
   text-decoration: none;
 }
 
-.footer {
-  background-color: orange;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-
 @media (max-width: 960px) {
   /* For a screen < 960px, this CSS will be read */
   body {
