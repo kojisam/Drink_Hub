@@ -1,6 +1,13 @@
+.navbar-brand {
+  position: fixed;
+  animation: fade 0.3s ease-in-out;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: #ffffff6b;
+
+
 }
 
 .navbar-lewagon .navbar-collapse {
