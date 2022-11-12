@@ -1,34 +1,35 @@
 <div class="d-flex justify-content-center my-5">
   <div class="col-12 col-lg-3">
     <div class="card text-center align-self-center border-0" style="background-color:#ddcecde8">
-      <p>Name: <%= @drink.name %></p>
+      <h3><%= @drink.name %></h3>
       <%= cl_image_tag @drink.photo.key, height: 300, width: 400, crop: :fit %>
+      <br>
       <p>Description: <%= @drink.description %></p>
       <p>Price: £<%= @drink.price %></p>
-      <button type="button" class="buttons m-1"><%= link_to "See our selection of drinks", "/drinks" %>
       <button type="button" class="buttons">
       <%= link_to "Buy Now", new_drink_order_path(@drink)%>
+      <button type="button" class="buttons m-1"><%= link_to "See our selection of drinks", "/drinks" %>
     </div>
   </div>
 
   <div class="col-12 col-lg-3">
     <div class="card text-center align-self-center border-0 align-middle my-auto" id="review-card" style="background-color:#ddcecde8">
-  <p><%= pluralize @drink.reviews.size, "review" %></p>
-  <% if @drink.reviews.blank? %>
-    Be the first to leave a review for <%= @drink.name %>
-  <% else %>
-    <% @drink.reviews.each do |review| %>
-      <p><%= review.content %></p>
-      <p><%= review.rating %></p>
-    <% end %>
-  <% end %>
-  <%= simple_form_for([@drink, @review]) do |f| %>
-  <%= f.input :content %>
-  <%= f.input :rating, collection: (1..5).to_a, label: "Rate your drink", input_html: {data: {controller: "star-rating"}} %>
-  <%= f.button :submit, class: "buttons" %>
-<% end %>
-</div>
-</div>
+      <p><%= pluralize @drink.reviews.size, "review" %></p>
+      <% if @drink.reviews.blank? %>
+        Be the first to leave a review for <%= @drink.name %>
+      <% else %>
+        <% @drink.reviews.each do |review| %>
+          <p><%= review.content %></p>
+          <p><%= review.rating %></p>
+        <% end %>
+      <% end %>
+      <%= simple_form_for([@drink, @review]) do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: (1..5).to_a, label: "Rate your drink", input_html: {data: {controller: "star-rating"}} %>
+      <%= f.button :submit, class: "buttons" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
