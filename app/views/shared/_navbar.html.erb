@@ -4,7 +4,7 @@
         <%= image_tag "https://img.freepik.com/premium-vector/grape-soda-can-crystal-glass-drawing-illustration-vector_42174-382.jpg"  %>
     <% end %>
 
- <%= form_with url: drinks_path, method: :get, class: "d-flex" do %>
+ <%= form_with url: drinks_path, method: :get, class: "nav-bar-form d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
