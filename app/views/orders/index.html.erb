@@ -24,10 +24,10 @@
           <%# <% sum  += (order.drink.price * order.quantity) %>
           <td><%= total = (order.drink.price * order.quantity)%></td>
           <td><% sum  += (order.drink.price * order.quantity) %></td>
-          <td><%= link_to "See order", order_path(order) %></td>
+          <td><button type="button" class="btn btn-danger"><%= link_to "See order", order_path(order) %></td>
         </tr>
         <% end %>
-        <span>  <%= "£#{sum}" %> </span>
+        <span>  <%= "Total of Orders : £#{sum}" %> </span>
       </tbody>
     </table>
   </div>
