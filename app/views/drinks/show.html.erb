@@ -14,23 +14,28 @@
 
   <div class="col-12 col-lg-3">
     <div class="card text-center align-self-center border-0 align-middle my-auto" id="review-card" style="background-color:#ddcecde8">
-      <p><%= pluralize @drink.reviews.size, "review" %></p>
-      <% if @drink.reviews.blank? %>
-        Be the first to leave a review for <%= @drink.name %>
-      <% else %>
-        <% @drink.reviews.each do |review| %>
-          <p><%= review.content %></p>
-          <p><%= review.rating %></p>
+
+  <p><%= pluralize @drink.reviews.size, "review" %></p>
+   <%= simple_form_for([@drink, @review]) do |f| %>
+  <%= f.input :content, placeholder: "Write your review here", label:false%>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Rate your drink", input_html: {data: {controller: "star-rating"}} %>
+  <%= f.button :submit, class: "buttons" %>
+<% end %>
+
+  <% if @drink.reviews.blank? %>
+    <strong>Be the first to leave a review for<%= @drink.name %></strong>
+  <% else %>
+    <strong>Add another review for <%= @drink.name %></strong>
+    <div class="card-body" style="background-color:#fff">
+    <% @drink.reviews.each do |review| %>
+      <p><%= review.content %></p>
+      <div class="d-flex justify-content-center">
+        <% review.rating.times do %>
+        <p><i class="fa-solid fa-star"></i></p>
         <% end %>
-      <% end %>
-      <%= simple_form_for([@drink, @review]) do |f| %>
-      <%= f.input :content %>
-      <%= f.input :rating, collection: (1..5).to_a, label: "Rate your drink", input_html: {data: {controller: "star-rating"}} %>
-      <%= f.button :submit, class: "buttons" %>
-      <% end %>
+      </div>
+    <% end %>
     </div>
-  </div>
+  <% end %>
 </div>
-
-
-<%# £#{sum}" %>
+</div>
