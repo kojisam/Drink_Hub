@@ -5,8 +5,8 @@
       <%= cl_image_tag @drink.photo.key, height: 300, width: 400, crop: :fit %>
       <p>Description: <%= @drink.description %></p>
       <p>Price: £<%= @drink.price %></p>
-      <button type="button" class="btn btn-danger m-1"><%= link_to "See our selection of drinks", "/drinks" %>
-      <button type="button" class="btn btn-danger">
+      <button type="button" class="buttons m-1"><%= link_to "See our selection of drinks", "/drinks" %>
+      <button type="button" class="buttons">
       <%= link_to "Buy Now", new_drink_order_path(@drink)%>
     </div>
   </div>
