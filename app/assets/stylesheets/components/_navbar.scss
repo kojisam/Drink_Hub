@@ -1,50 +1,37 @@
-.navbar-brand {
-  position: fixed;
-  animation: fade 0.3s ease-in-out;
-}
-
 .navbar-lewagon {
   justify-content: space-between;
   background: #ffffff6b;
-
-
 }
-
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
 .navbar-lewagon .navbar-brand img {
   width: 40px;
   border-radius: 17px;
 }
-
 .navbar-expand-sm .navbar-nav .nav-link {
   border-radius: 8px;
 }
-
 .avatar {
   width: 40px;
   border-radius: 17px;
   margin-left: 8px;
   height: 38px;
 }
-
 .form-control {
   border-radius: 11px;
   margin: 6px;
 }
-
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #00b3d0;
+  --bs-btn-bg: #00B3D0;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #0b5ed7;
-  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-hover-bg: #0B5ED7;
+  --bs-btn-hover-border-color: #0A58CA;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #0a58ca;
-  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-bg: #0A58CA;
+  --bs-btn-active-border-color: #0A53BE;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #0D6EFD;
