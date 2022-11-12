@@ -25,6 +25,7 @@ class DrinksController < ApplicationController
 
   def show
     @drink = Drink.find(params[:id])
+    @review = Review.new
   end
 
   private

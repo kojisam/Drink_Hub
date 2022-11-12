@@ -10,6 +10,25 @@
       <%= link_to "Buy Now", new_drink_order_path(@drink)%>
     </div>
   </div>
+
+  <div class="col-12 col-lg-3">
+    <div class="card text-center align-self-center border-0" style="background-color:#ddcecde8">
+  <p><%= pluralize @drink.reviews.size, "review" %></p>
+  <% if @drink.reviews.blank? %>
+    Be the first to leave a review for <%= @drink.name %>
+  <% else %>
+    <% @drink.reviews.each do |review| %>
+      <p><%= review.content %></p>
+      <p><%= review.rating %></p>
+    <% end %>
+  <% end %>
+  <%= simple_form_for([@drink, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.input :rating, collection: (1..5).to_a, label: "Rate your drink", input_html: {data: {controller: "star-rating"}} %>
+  <%= f.button :submit %>
+<% end %>
+</div>
+</div>
 </div>
 
 
