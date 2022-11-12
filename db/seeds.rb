@@ -5,39 +5,40 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-puts "Destroy all records"
-Order.destroy_all
-Drink.destroy_all
-User.destroy_all
-puts "Done"
+
+# puts "Destroy all records"
+# Order.destroy_all
+# Drink.destroy_all
+# User.destroy_all
+# puts "Done"
 puts "Creating test user"
 User.create!(
-  email: "fakertest@email.com",
-  password: "faker123345"
+  email: "koji@lewagon.com",
+  password: "hello123"
 )
-puts "Done"
-puts "Creating 50 drinks"
-10.times do
-  file = URI.open(Faker::LoremFlickr.image(search_terms: ['sodacan']))
-  i = 1
-  object = Drink.new(
-    name: Faker::Kpop.iii_groups,
-    description: Faker::Lorem.sentences,
-    stock_level: rand(50..100),
-    price: rand(2..10),
-    user: User.first
-  )
-  object.photo.attach(io: file, filename:"#{i}_image.jpg", content_type: "image/jpg")
-  object.save!
-  i += 1
-end
-puts "Done"
-puts "Creating 10 orders"
-10.times do
-  Order.create!(
-    quantity: rand(1..10),
-    drink: Drink.all.sample,
-    user: User.first
-  )
-end
-puts "Done"
+# puts "Done"
+# puts "Creating 50 drinks"
+# 10.times do
+#   file = URI.open(Faker::LoremFlickr.image(search_terms: ['sodacan']))
+#   i = 1
+#   object = Drink.new(
+#     name: Faker::Kpop.iii_groups,
+#     description: Faker::Lorem.sentences,
+#     stock_level: rand(50..100),
+#     price: rand(2..10),
+#     user: User.first
+#   )
+#   object.photo.attach(io: file, filename:"#{i}_image.jpg", content_type: "image/jpg")
+#   object.save!
+#   i += 1
+# end
+# puts "Done"
+# puts "Creating 10 orders"
+# 10.times do
+#   Order.create!(
+#     quantity: rand(1..10),
+#     drink: Drink.all.sample,
+#     user: User.first
+#   )
+# end
+# puts "Done"
