@@ -1,13 +1,14 @@
 <div class="d-flex justify-content-center my-5">
   <div class="col-12 col-lg-3">
     <div class="card text-center align-self-center border-0" style="background-color:#ddcecde8">
-      <p>Name: <%= @drink.name %></p>
+      <h3><%= @drink.name %></h3>
       <%= cl_image_tag @drink.photo.key, height: 300, width: 400, crop: :fit %>
-      <p>Description: <%= @drink.description %></p>
-      <p>Price: £<%= @drink.price %></p>
-      <button type="button" class="buttons m-1"><%= link_to "See our selection of drinks", "/drinks" %>
+      <br>
+      <p><%= @drink.description %></p>
+      <p>Price: £<%= @drink.price %>.99 per unit</p>
       <button type="button" class="buttons">
       <%= link_to "Buy Now", new_drink_order_path(@drink)%>
+      <button type="button" class="buttons m-1"><%= link_to "See our selection of drinks", "/drinks" %>
     </div>
   </div>
 
@@ -38,6 +39,3 @@
 </div>
 </div>
 </div>
-
-
-<%# £#{sum}" %>
