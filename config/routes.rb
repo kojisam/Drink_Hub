@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :drinks do
     resources :orders, only: [:create, :new]
+      resources :reviews, only: :create
     # POST request to create an order
   end
 
